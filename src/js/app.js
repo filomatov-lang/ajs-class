@@ -1,22 +1,20 @@
-export { Character, Bowman, Swordsman, Magician, Daemon, Undead, Zombie};
-
-class Character {
+export class Character {
   constructor(name, type) {
-    if (typeof name !== "string") {
-      throw new Error("Имя должно быть строкой");
+    if (typeof name !== 'string') {
+      throw new Error('Имя должно быть строкой');
     }
 
     if (name.length < 2 || name.length > 10) {
-      throw new Error("Имя должно быть от 2 до 10 букв");
+      throw new Error('Имя должно быть от 2 до 10 букв');
     }
 
     const types = [
-      "Bowman",
-      "Swordsman",
-      "Magician",
-      "Daemon",
-      "Undead",
-      "Zombie",
+      'Bowman',
+      'Swordsman',
+      'Magician',
+      'Daemon',
+      'Undead',
+      'Zombie',
     ];
 
     if (!types.includes(type)) {
@@ -30,48 +28,48 @@ class Character {
   }
 }
 
-class Bowman extends Character {
-  constructor(name, type = "Bowman") {
+export class Bowman extends Character {
+  constructor(name, type = 'Bowman') {
     super(name, type);
     this.attack = 25;
     this.defence = 25;
   }
 }
 
-class Swordsman extends Character {
-  constructor(name, type = "Swordsman") {
+export class Swordsman extends Character {
+  constructor(name, type = 'Swordsman') {
     super(name, type);
     this.attack = 40;
     this.defence = 10;
   }
 }
 
-class Magician extends Character {
-  constructor(name, type = "Magician") {
+export class Magician extends Character {
+  constructor(name, type = 'Magician') {
     super(name, type);
     this.attack = 10;
     this.defence = 40;
   }
 }
 
-class Undead extends Character {
-  constructor(name, type = "Undead") {
+export class Undead extends Character {
+  constructor(name, type = 'Undead') {
     super(name, type);
     this.attack = 25;
     this.defence = 25;
   }
 }
 
-class Zombie extends Character {
-  constructor(name, type = "Zombie") {
+export class Zombie extends Character {
+  constructor(name, type = 'Zombie') {
     super(name, type);
     this.attack = 40;
     this.defence = 10;
   }
 }
 
-class Daemon extends Character {
-  constructor(name, type = "Daemon") {
+export class Daemon extends Character {
+  constructor(name, type = 'Daemon') {
     super(name, type);
     this.attack = 10;
     this.defence = 40;

@@ -4,6 +4,7 @@
     browser: true,
     node: true,
     es2022: true,
+    jest: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
@@ -17,6 +18,17 @@
       extends: ['plugin:jest/recommended'],
       rules: { 'jest/prefer-expect-assertions': 'off' },
     },
+    {
+      files: ['src/js/app.js'],
+      rules: {
+        'max-classes-per-file': ['error', 7],
+      },
+    },
   ],
-  rules: {},
+  rules: {
+      'import/extensions': ['error', 'always', {
+      js: 'always',
+      jsx: 'never',
+    }],
+  },
 };
